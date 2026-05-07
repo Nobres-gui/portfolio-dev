@@ -1,0 +1,86 @@
+.banner{
+    height: 100vh;
+    color: var(--cor-branca);
+    background-color: var(--cor-primaria);
+    padding-top: 3.7em;
+    font-family: 'Inter', sans-serif;
+}
+
+.banner__container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8em 0em 0em 3em;
+}
+
+.banner__pre-title{
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+}
+
+.banner__title{
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    letter-spacing: -0.025em;
+}
+
+.banner__title-destaque{
+    font-size: 3.75rem;
+    color: var(--cor-cinza);
+}
+
+.banner__text{
+    font-size: 1.25rem;
+    color: var(--cor-cinza);
+    max-width: 42rem;
+    padding: 0 2.5em;
+    line-height: 1.6;
+}
+
+.banner__buttons{
+    width: 48rem;
+    display: flex;
+    gap: 1.5em;
+    padding: 2em 3em;
+}
+
+.banner__button{
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+}
+
+.type1{
+    padding: 1em 2em;
+    border-radius: 5px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-preta);
+}
+
+.type1:hover{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-preta);
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.type2{
+    padding: 1em 2em;
+    border-radius: 5px;
+    border: 1px solid var(--cor-cinza);
+    color: var(--cor-branca);
+}
+
+.type2:hover{
+    background-color: var(--cor-secundaria);
+    opacity: 0.5;
+    color: var(--cor-preta);
+    transition: 0.2s;
+}

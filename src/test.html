@@ -1,0 +1,259 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Matheus Maranho | Portfólio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    .navbar {
+      background-color: #020617;
+    }
+
+    .nav-link:hover {
+      color: #38bdf8 !important;
+    }
+
+    #sobre { height: 60vh; }
+    #projetos { height: 80vh; }
+    #habilidades { height: 60vh; }
+
+    #contato a { 
+      color: rgb(255, 129, 129);
+      text-decoration: none;
+    }
+
+    .apresentacao {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    .apresentacao h1 {
+      font-size: 3rem;
+    }
+
+    .highlight {
+      color: #38bdf8;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: #1e293b;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .cardC { color:rgb(190, 190, 190) }
+    .cardT{ color: white; }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    #sobre h5 { color:rgb(190, 190, 190) }
+
+    .badge {
+      margin: 5px;
+      font-size: 1rem;
+    }
+
+    .btn-info {
+      background-color: #38bdf8;
+      border: none;
+    }
+
+    .btn-info:hover {
+      background-color: #0ea5e9;
+    }
+
+    footer {
+      background-color: #020617;
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+
+    /* Estilo para o link que parece botão */
+    .btn-email {
+      background-color: #007bff;
+      margin-left: 5px;
+      color: white !important; /* Força o branco sobre o estilo do #contato a */
+      border: none;
+      padding: 6px 15px;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn-email:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Maranho-dev</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="menu" class="collapse navbar-collapse">
+      <div class="ms-auto">
+        <a href="#sobre" class="nav-link d-inline text-white p-2 ">Sobre</a>
+        <a href="#projetos" class="nav-link d-inline text-white p-2 ">Projetos</a>
+        <a href="#habilidades" class="nav-link d-inline text-white p-2 ">Habilidades</a>
+        <a href="#contato" class="nav-link d-inline text-white p-2">Contato</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="apresentacao">
+  <div>
+    <h1>Olá, eu sou <span class="highlight">Matheus</span></h1>
+    <p>Estudante de Sistemas de informação</p>
+    <button class="btn btn-info mt-3" onclick="scrollToSection('contato')">Fale comigo</button>
+  </div>
+</section>
+<hr>
+
+<section id="sobre">
+  <div class="container">
+    <h2 class="section-title"><span class="highlight">Sobre mim</span></h2>
+    <p>
+      &nbsp; Faço cursos à parte fora da faculdade (OneBitCode, Udemy, Fundação Bradesco, etc). Sempre fui interessado por essa área, além de buscar aprender novas linguagens de programação e tecnologias. Cursando inglês na Wizard há mais de 2 anos, tenho capacidade de me comunicar perfeitamente e me encontro no nível B2.
+      <br><br>
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;Mercado de trabalho</h5>
+      DAXIA · Logística | maio de 2025 - o momento <br>
+      - Manipulação e análise de dados utilizando Excel e banco de dados internos através do sistema TOTVS. <br>
+      - Registro, atualização e envio de informações de forma organizada. <br>
+      - Desenvolvimento de habilidades de organização e resolução de problemas.
+    </p>
+  </div>
+</section>
+<br><br><br>
+<section id="projetos">
+  <div class="container">
+    <h2 class="section-title"> Principais Projetos</h2>
+
+
+<div class="row g-4">
+
+  <div class="col-md-4">
+    <div class="card p-3 ">
+      <h5 class="cardT">monitoradorNode</h5>
+      <p class="cardC">JavaScript | Node.js <br>
+    Tem o objetivo de monitorar a maquina do usuario, permitindo ver detalhes como a velocidade cpu, armazenamento livre, sistema e outras informações no terminal de comando com a ajuda das blibliotecas Node OS e o node FS </p>
+      <button onclick="window.location.href='https://github.com/Maranho-dev/monitoradorNode/blob/master/index.js'"  class="btn btn-outline-info btn-sm">Ver projeto</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-3 ">
+      <h5 class="cardT">ApiPokemon</h5>
+      <p class="cardC">HTML | CSS | JavaScript <br>
+        Projeto utilizando API, asyn functions, DOM. O projeto funciona como uma pokedex, fazendo uso da api: PokeApi, para solicitar via JSON as informaçoes do pokemon e apos manipular esses dados tornar ele visiveis para o usuario</p>
+      <button  onclick="window.location.href='https://github.com/Maranho-dev/APIpokemon'" class="btn btn-outline-info btn-sm">Ver projeto</button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-3 ">
+    
+      <h5 class="cardT" >
+        Ts-GerenciarUsuarios</h5>
+      <p class="cardC" >TypeScript | HTML <br> Sistema de gereciar usuarios feito com o objetivo de praticar typescript utilizando tecnicas como a Generic < T >, Decorators de Método (@logExecucao),  Interfaces e  PropertyDescriptor <br> <br> </p>
+      <button  onclick="window.location.href='https://github.com/Maranho-dev/Ts-GerenciarUsuarios/blob/main/project.ts'" class="btn btn-outline-info btn-sm">Ver projeto</button>
+    </div>
+  </div>
+
+</div>
+
+
+  </div>
+</section>
+
+
+<section id="habilidades">
+  <div class="container text-center">
+    <h2 class="section-title">Habilidades</h2>
+    <span class="badge bg-info">HTML</span>
+    <span class="badge bg-primary">CSS</span>
+    <span class="badge bg-warning text-dark">JavaScript</span>
+    <span class="badge bg-success">Bootstrap</span>
+    <br>
+    <span class="badge bg-danger">Node.js</span>
+    <span class="badge bg-secondary">GitHub</span>
+    <span class="badge bg-info">MySQL</span>
+    <span class="badge bg-primary">TypeScript</span>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container text-center">
+    <h2 class="section-title">Contato</h2>
+    <p>
+      Email: 
+      <a href="mailto:matheusmaranhorangel@gmail.com" onclick="fallbackCopy(event, 'matheusmaranhorangel@gmail.com')" class="btn-email">
+        matheusmaranhorangel@gmail.com
+      </a>
+    </p>
+    <p><a href="https://github.com/Maranho-dev">GitHub</a></p>
+    <p><a href="https://linkedin.com/in/matheus-maranho-22494b333?">LinkedIn</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 - Matheus | Portfólio</p>
+</footer>
+
+<script>
+  function fallbackCopy(event, email) {  
+  navigator.clipboard.writeText(email).then(() => {
+    console.log("Email copiado!");
+    alert("O e-mail foi copiado para sua área de transferência");
+  });
+
+}
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+window.onload = () => {
+  document.querySelector('.apresentacao').style.opacity = 1;
+}
+</script>
+
+</body>
+</html>

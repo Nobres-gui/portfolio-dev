@@ -1,0 +1,16 @@
+@import "./reset.css";
+@import "./components/NavBar/navbar.css";
+@import "./components/Banner/banner.css";
+@import "./components/Sobre Mim/sobreMim.css";
+
+:root{
+  --cor-primaria: #080C16;
+  --cor-secundaria: #00E6E6;
+
+  --cor-branca: #ffffff;
+  --cor-cinza: #94A3B8;
+  --cor-preta: #000000;
+  --cor-card: #10172b;
+
+  --border-opacity: 0.5;
+}
