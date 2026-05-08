@@ -17,8 +17,8 @@ export function Banner() {
       </div>
 
       <div className="banner__buttons">
-        <a href="" className="banner__button type1"> Entrar em Contato</a>
-        <a href="" className="banner__button type2"> Ver Projetos</a>
+        <a href="#contact" className="banner__button type1"> Entrar em Contato</a>
+        <a href="#projects" className="banner__button type2"> Ver Projetos</a>
       </div>
     </section>
   );

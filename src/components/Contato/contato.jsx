@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export function Contato() {
-  const form = useRef(); // Referência para o formulário
+  const formRef = useRef(); // Referência para o formulário
   // Estado para a mensagem de feedback (sucesso ou erro)
   const [feedback, setFeedback] = useState({ exibir: false, msg: '', tipo: '' });
 
@@ -12,7 +12,7 @@ export function Contato() {
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
-      form.current, 
+      formRef.current, 
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then((result) => {
@@ -77,7 +77,7 @@ export function Contato() {
           </div>
         </div>
 
-        <form ref={form} onSubmit={sendEmail} className="contato__content-forms">
+        <form ref={formRef} onSubmit={sendEmail} className="contato__content-forms">
           <div className="campo">
             <label htmlFor="nome">Nome</label>
             <input 
