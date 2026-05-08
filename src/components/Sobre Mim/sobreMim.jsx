@@ -1,7 +1,28 @@
+import { useEffect, useRef, useState } from 'react';
+
 export function SobreMim() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 } 
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="sobreMim" id="about">
-      <div className="sobreMim__card1">
+    <div className="sobreMim" id="about" ref={sectionRef}>
+      {/* CARD 1 - Mantendo todo o seu texto original */}
+      <div className={`sobreMim__card1 reveal-sobre reveal-left ${visible ? 'active' : ''}`}>
         <h2 className="sobreMim__card-title">
           <span className="card__title-destaque">.01</span> Sobre Mim
         </h2>
@@ -39,7 +60,8 @@ export function SobreMim() {
         </div>
       </div>
 
-      <div className="sobreMim__card2">
+      {/* CARD 2 - Mantendo todos os seus itens e ícones */}
+      <div className={`sobreMim__card2 reveal-sobre reveal-right ${visible ? 'active' : ''}`}>
         <div className="sobreMim__card2-item">
           <i className="fa-solid fa-server"></i>
           <div>

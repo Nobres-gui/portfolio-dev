@@ -7,18 +7,31 @@
 @import "./components/Contato/contato.css";
 @import "./components/Footer/footer.css";
 
-:root {
+/* Tema Dark (Seu padrão original) */
+:root, [data-theme='dark'] {
   --cor-primaria: #080c16;
   --cor-secundaria: #00e6e6;
-
   --cor-branca: #ffffff;
   --cor-cinza: #94a3b8;
   --cor-preta: #000000;
   --cor-card: #10172b;
-
   --border-opacity: 0.5;
 }
 
+/* Tema Light (Inversão de tons) */
+[data-theme='light'] {
+  --cor-primaria: #f0f4f8;   /* Fundo claro */
+  --cor-secundaria: #008b8b; /* Azul um pouco mais escuro para leitura */
+  --cor-branca: #080c16;     /* O que era branco vira a cor do seu fundo dark */
+  --cor-cinza: #475569;      /* Cinza mais escuro para contraste */
+  --cor-preta: #ffffff;      /* Inverte o preto */
+  --cor-card: #ffffff;       /* Cards brancos ou levemente cinzas */
+  --border-opacity: 0.2;
+}
+
+/* Transição suave para todo o site ao trocar de tema */
 body {
   background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

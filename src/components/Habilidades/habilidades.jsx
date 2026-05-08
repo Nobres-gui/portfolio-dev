@@ -1,328 +1,119 @@
+import { useEffect, useRef, useState } from 'react';
+
 export function Habilidades() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="habilidades" id="habilidades">
-      <h2 className="habilidades__container-title">
+    <section className="habilidades" id="habilidades" ref={sectionRef}>
+      <h2 className={`habilidades__container-title reveal-habilidades ${visible ? 'active' : ''}`}>
         <span className="container__title-destaque">.03</span> Habilidades
       </h2>
 
       <div className="habilidades__container">
-        <div className="habilidades__container-topicos">
+        {/* LINGUAGENS */}
+        <div className={`habilidades__container-topicos reveal-habilidades ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.1s' }}>
           <h1>Linguagens</h1>
           <div className="habilidades__progress-bars">
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Python
-                </h2>
-                <span>Intermediário</span>
+            {[
+              { name: "Python", level: "Intermediário", width: "66.66%", icon: "fa-python" },
+              { name: "SQL", level: "Intermediário", width: "66.66%", icon: "fa-database" },
+              { name: "JavaScript", level: "Intermediário", width: "66.66%", icon: "fa-js" },
+              { name: "C", level: "Intermediário", width: "66.66%", icon: "fa-c" }
+            ].map((skill, index) => (
+              <div className="progress__bar-linguagem" key={index}>
+                <div className="progress__linguagem-titulo">
+                  <h2><i className={`fa-brands ${skill.icon}`}></i> {skill.name}</h2>
+                  <span>{skill.level}</span>
+                </div>
+                <div className="progress">
+                  <div className="progress-bar" style={{ width: visible ? skill.width : "0%" }}></div>
+                </div>
               </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> SQL
-                </h2>
-                <span>Intermediário</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> JavaScript
-                </h2>
-                <span>Intermediário</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> C
-                </h2>
-                <span>Intermediário</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="habilidades__container-topicos">
+        {/* FRAMEWORKS */}
+        <div className={`habilidades__container-topicos reveal-habilidades ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.2s' }}>
           <h1>Frameworks</h1>
           <div className="habilidades__progress-bars">
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Flask
-                </h2>
-                <span>Intermediário</span>
+            {[
+              { name: "Flask", level: "Intermediário", width: "66.66%" },
+              { name: "FastAPI", level: "Básico", width: "33.33%" },
+              { name: "Django", level: "Básico", width: "33.33%" },
+              { name: "Pandas", level: "Básico", width: "50%" }
+            ].map((skill, index) => (
+              <div className="progress__bar-linguagem" key={index}>
+                <div className="progress__linguagem-titulo">
+                  <h2><i className="fa-brands fa-python"></i> {skill.name}</h2>
+                  <span>{skill.level}</span>
+                </div>
+                <div className="progress">
+                  <div className="progress-bar" style={{ width: visible ? skill.width : "0%" }}></div>
+                </div>
               </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> FastAPI
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Django
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Pandas
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "50%" }}></div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="habilidades__container-topicos">
-          <h1>Bancos de Dados</h1>
+        {/* BANCO DE DADOS E BI */}
+        <div className={`habilidades__container-topicos reveal-habilidades ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.3s' }}>
+          <h1>Bancos de Dados & BI</h1>
           <div className="habilidades__progress-bars">
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> MySQL
-                </h2>
-                <span>Intermediário</span>
+            {[
+              { name: "MySQL", level: "Intermediário", width: "66.66%" },
+              { name: "PostgreSQL", level: "Básico", width: "33.33%" },
+              { name: "MongoDB", level: "Básico", width: "33.33%" },
+              { name: "Power BI", level: "Intermediário", width: "33.33%" }
+            ].map((skill, index) => (
+              <div className="progress__bar-linguagem" key={index}>
+                <div className="progress__linguagem-titulo">
+                  <h2><i className="fa-brands fa-python"></i> {skill.name}</h2>
+                  <span>{skill.level}</span>
+                </div>
+                <div className="progress">
+                  <div className="progress-bar" style={{ width: visible ? skill.width : "0%" }}></div>
+                </div>
               </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> PostgreSQL
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> MongoDB
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Power BI
-                </h2>
-                <span>Intermediário</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="habilidades__container-topicos">
+        {/* CLOUD & VERSIONAMENTO */}
+        <div className={`habilidades__container-topicos reveal-habilidades ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.4s' }}>
           <h1>Cloud & Versionamento</h1>
           <div className="habilidades__progress-bars">
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Github / GitBash
-                </h2>
-                <span>Intermediário</span>
+            {[
+              { name: "Github / GitBash", level: "Intermediário", width: "66.66%" },
+              { name: "AWS", level: "Básico", width: "33.33%" },
+              { name: "Google Cloud", level: "Básico", width: "33.33%" }
+            ].map((skill, index) => (
+              <div className="progress__bar-linguagem" key={index}>
+                <div className="progress__linguagem-titulo">
+                  <h2><i className="fa-brands fa-python"></i> {skill.name}</h2>
+                  <span>{skill.level}</span>
+                </div>
+                <div className="progress">
+                  <div className="progress-bar" style={{ width: visible ? skill.width : "0%" }}></div>
+                </div>
               </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "66.66%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> AWS
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
-
-            <div className="progress__bar-linguagem">
-              <div className="progress__linguagem-titulo">
-                <h2>
-                  <i class="fa-brands fa-python"></i> Google Cloud
-                </h2>
-                <span>Básico</span>
-              </div>
-
-              <div
-                className="progress"
-                role="progressbar"
-                aria-label="Basic example"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div className="progress-bar" style={{ width: "33.33%" }}></div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 3em;
-  padding: 14em 0em 8em 3em;
+  padding: 10em 0em 8em 3em;
   background-color: var(--cor-primaria);
   font-family: "Inter", sans-serif;
 }
@@ -92,6 +92,17 @@
 .projetos__card-content span {
   font-size: 16px;
   color: var(--cor-cinza);
+}
+
+.reveal-projetos {
+  opacity: 0;
+  transform: translateY(40px); /* Começa 40px abaixo */
+  transition: all 0.8s ease-out;
+}
+
+.reveal-projetos.active {
+  opacity: 1;
+  transform: translateY(0); /* Sobe para a posição original */
 }
 
 

@@ -28,12 +28,15 @@
   display: flex;
   gap: 1em;
   font-size: 17px;
+  list-style: none; /* Removendo pontos da lista */
 }
 
 .navbar__links-item {
   color: var(--cor-cinza);
   text-decoration: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .navbar__links-item:hover {
@@ -41,6 +44,24 @@
   transition: 0.3s;
 }
 
+/* --- ESTILO DO MENU HAMBÚRGUER --- */
+.navbar__hamburger {
+  display: none; /* Escondido por padrão no Desktop */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1001;
+}
+
+.navbar__hamburger .bar {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: var(--cor-branca);
+  transition: 0.3s ease;
+}
+
+/* --- RESPONSIVIDADE --- */
 
 @media (max-width: 1024px) {
   .navbar {
@@ -59,33 +80,62 @@
 
 @media (max-width: 768px) {
   .navbar {
-    gap: 3em;
-    padding: 1.2em;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 0; 
+    padding: 1.2em 2.5em;
+    justify-content: space-between; /* Alinha logo e hamburguer nas pontas */
+    margin-left: 0;
   }
 
+  .navbar__hamburger {
+    display: flex; /* Aparece no tablet e celular */
+  }
+
+  /* Animação do X quando o menu está aberto */
+  .navbar__hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar__hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar__hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Transformação da lista em Menu Mobile Fullscreen */
   .navbar__links {
-    gap: 0.8em;
+    position: fixed;
+    right: -100%; /* Começa escondido à direita */
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-primaria);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1000;
+  }
+
+  .navbar__links.active {
+    right: 0; /* Desliza para dentro da tela */
+  }
+
+  .navbar__links-item {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-    margin-left: 0;
+    padding: 1em 1.5em;
   }
 
   .navbar__name {
     font-size: 16px;
-    justify-content: center;
   }
 
-  .navbar__links {
-    flex-direction: column;
-    align-items: center;
-    font-size: 15px;
+  .navbar__hamburger .bar {
+    width: 25px;
   }
 }

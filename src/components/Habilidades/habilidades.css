@@ -1,7 +1,7 @@
 .habilidades {
   display: flex;
   flex-direction: column;
-  padding: 14em 0em 8em 3em;
+  padding: 10em 0em 8em 3em;
   background-color: var(--cor-primaria);
   font-family: "Inter", sans-serif;
 }
@@ -72,6 +72,17 @@
 
 .progress-bar {
   background-color: var(--cor-secundaria);
+}
+
+.reveal-habilidades {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-habilidades.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {

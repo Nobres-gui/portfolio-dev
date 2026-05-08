@@ -30,12 +30,6 @@
     font-family: "JetBrains Mono", monospace;
 }
 
-
-
-
-
-
-
 .contato__content{
     display: flex;
     gap: 10em;
@@ -169,6 +163,34 @@
   background: #1d4ed8;
   transform: translateY(-2px);
 }
+
+/* Estilo da mensagem de feedback */
+.feedback-msg {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.feedback-msg.sucesso {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.feedback-msg.erro {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 @media (max-width: 1024px) {
   .contato {

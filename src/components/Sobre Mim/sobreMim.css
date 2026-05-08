@@ -113,6 +113,33 @@
   line-height: 1.8em;
 }
 
+/* Estado inicial comum */
+.reveal-sobre {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+
+/* Texto vem da esquerda */
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+/* Cards vêm da direita */
+.reveal-right {
+  transform: translateX(60px);
+}
+
+/* Estado visível */
+.reveal-sobre.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+
 
 @media (max-width: 1024px) {
   .sobreMim {
