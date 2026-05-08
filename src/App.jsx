@@ -12,21 +12,22 @@ import emailjs from "@emailjs/browser";
 
 function App() {
   useEffect(() => {
-    // Verifica se NÃO é localhost para evitar gastos desnecessários do plano do EmailJS
     if (window.location.hostname !== "localhost") {
-      const notificacaoVisita = {
+      // Criamos um objeto simples com os dados, sem depender de formulário
+      const templateParams = {
         to_name: "Guilherme",
         message: "Alguém acabou de acessar seu portfólio na Vercel!",
         time: new Date().toLocaleString(),
-        user_agent: navigator.userAgent, // Opcional: para saber o navegador do visitante
+        user_agent: navigator.userAgent,
       };
 
+      // Usamos .send() em vez de .sendForm()
       emailjs
-        .sendForm(
+        .send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          form.current,
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+          templateParams, // Passamos o objeto aqui
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
         .then(() => {
           console.log("Notificação de acesso enviada.");
@@ -35,7 +36,7 @@ function App() {
           console.error("Falha ao enviar notificação:", err);
         });
     }
-  }, []); // O array vazio garante que rode apenas UMA VEZ por acesso
+  }, []);
 
   return (
     <div className="body_page">
