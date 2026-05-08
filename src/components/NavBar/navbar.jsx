@@ -23,7 +23,7 @@ export function NavBar() {
           </a>
         </li>
         <li>
-          <a className="navbar__links-item" href="#contact">
+          <a className="navbar__links-item" href="#habilidades">
             Habilidades
           </a>
         </li>

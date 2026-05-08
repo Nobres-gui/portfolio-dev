@@ -1,0 +1,140 @@
+.habilidades {
+  display: flex;
+  flex-direction: column;
+  padding: 14em 0em 8em 3em;
+  background-color: var(--cor-primaria);
+  font-family: "Inter", sans-serif;
+}
+
+.container__title-destaque {
+  color: var(--cor-secundaria);
+  font-size: 14px;
+  margin-top: 1em;
+  margin-right: 0.5em;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.habilidades__container-title {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  color: var(--cor-branca);
+  width: 10em;
+  margin-left: 4em;
+}
+
+.habilidades__container-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--cor-cinza); /* cor da linha */
+  margin-left: 2px;
+}
+
+.habilidades__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.habilidades__container-topicos {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 9em;
+  gap: 1em;
+}
+
+.habilidades__container-topicos h1 {
+  color: var(--cor-branca);
+  font-size: 22px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.habilidades__progress-bars {
+  width: 40em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.progress__linguagem-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--cor-cinza);
+  margin-bottom: 5px;
+}
+
+.progress {
+  background-color: var(--cor-card);
+  height: 0.8em;
+}
+
+.progress-bar {
+  background-color: var(--cor-secundaria);
+}
+
+@media (max-width: 1024px) {
+  .habilidades {
+    padding: 10em 0 6em 2em;
+  }
+
+  .habilidades__container-title {
+    margin-left: 2em;
+  }
+
+  .habilidades__container-topicos {
+    margin-left: 4em;
+  }
+
+  .habilidades__progress-bars {
+    width: 30em;
+  }
+}
+
+@media (max-width: 768px) {
+  .habilidades {
+    padding: 8em 2em;
+  }
+
+  .habilidades__container-title {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .habilidades__container-topicos {
+    margin-left: 0;
+    margin-top: 2em;
+  }
+
+  .habilidades__progress-bars {
+    width: 100%;
+  }
+
+  .habilidades__container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .habilidades {
+    padding: 6em 1.5em;
+  }
+
+  .habilidades__container-title {
+    font-size: 28px;
+    flex-wrap: wrap;
+  }
+
+  .habilidades__container-topicos h1 {
+    font-size: 18px;
+  }
+
+  .progress__linguagem-titulo {
+    font-size: 14px;
+  }
+
+  .habilidades__progress-bars {
+    gap: 0.8em;
+  }
+}

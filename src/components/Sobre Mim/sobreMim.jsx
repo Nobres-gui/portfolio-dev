@@ -41,7 +41,7 @@ export function SobreMim() {
 
       <div className="sobreMim__card2">
         <div className="sobreMim__card2-item">
-          <i class="fa-solid fa-server"></i>
+          <i className="fa-solid fa-server"></i>
           <div>
             <h2>Arquitetura de APIs</h2>
             <span>
@@ -51,7 +51,7 @@ export function SobreMim() {
           </div>
         </div>
         <div className="sobreMim__card2-item">
-          <i class="fa-solid fa-database"></i>
+          <i className="fa-solid fa-database"></i>
           <div>
             <h2>Bancos de Dados</h2>
             <span>
@@ -62,7 +62,7 @@ export function SobreMim() {
         </div>
 
         <div className="sobreMim__card2-item">
-          <i class="fa-solid fa-code-branch"></i>
+          <i className="fa-solid fa-code-branch"></i>
           <div>
             <h2>DevOps & Infra</h2>
             <span>
