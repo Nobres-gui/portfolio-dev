@@ -1,35 +1,126 @@
-.sobreMim{
-    /* height: 100vh; */
-    display: flex;
-    gap: 10em;
-    /* padding: 50px 20px; */
-    background-color: #f5f5f5;
-    max-width: 96rem;
-    font-family: 'inter', sans-serif;
+.sobreMim {
+  display: flex;
+  gap: 20em;
+  padding: 8em 5em;
+  background-color: var(--cor-primaria);
+  font-family: "Inter", sans-serif;
 }
 
-.SobreMim__card-title{
+.card__title-destaque {
+  color: var(--cor-secundaria);
+  font-size: 14px;
+  margin-top: 1em;
+  margin-right: 0.5em;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.sobreMim__card-title {
   display: flex;
   align-items: center;
-  font-size: 2.25rem;
+  font-size: 36px;
+  color: var(--cor-branca);
 }
 
-.SobreMim__card-title::after {
+.sobreMim__card-title::after {
   content: "";
   flex: 1;
   height: 1px;
-  background-color: #1f3a5f; /* cor da linha */
+  background-color: var(--cor-cinza); /* cor da linha */
   margin-left: 2px;
 }
 
-.SobreMim__card1{
-    width: 20em;
+.sobreMim__card1 {
+  width: 20em;
+  font-size: 1.125em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  color: var(--cor-cinza);
 }
 
-.SobreMim__card2{
-    color: var(--cor-branca);
-    width: 20em; 
-    padding: 5em 2em; 
-    background-color: var(--cor-card);
-    border-radius: 10px; 
+.sobreMim__card1 p {
+  width: 35em;
+  letter-spacing: 0px;
+  line-height: 1.3em;
+}
+
+.sobreMim__card1-lista {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  width: 32em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6.5em;
+  font-size: 14px;
+}
+
+.sobreMim__card1-lista ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card1__lista-item::before {
+  content: "▹";
+  margin-right: 0.5rem;
+  color: var(--cor-secundaria); /* Cor azul-500 */
+}
+
+.sobreMim__card2 {
+  width: 37em;
+  height: 15em;
+  padding: 9em 4em;
+  margin-top: 3em;
+  margin-left: 4em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+
+  font-size: 14px;
+  
+  background-color: color-mix(in srgb, var(--cor-card), transparent 44%);
+  border-radius: 10px;
+  box-shadow: 13px 13px 0px 0px
+    color-mix(in srgb, var(--cor-secundaria), transparent 60%);
+  border: 1px solid color-mix(in srgb, var(--cor-secundaria), transparent 85%);
+}
+
+.sobreMim__card2-item{
+  display: flex;
+  align-items: center;
+}
+
+.sobreMim__card2-item i{
+  color: var(--cor-secundaria);
+  font-size: 2em;
+  margin-right: 0.5em;
+  padding: 0.6em;
+  background-color: color-mix(in srgb, var(--cor-secundaria), transparent 90%);
+  border-radius: 10px;
+}
+
+.sobreMim__card2-item h2{
+  color: var(--cor-branca);
+  font-size: 18px;
+}
+
+.sobreMim__card2 span {
+  color: var(--cor-cinza);
+  width: 38em;
+  letter-spacing: 1px;
+  line-height: 1.8em;
+}
+
+@media (min-width: 1580px) {
+  .sobreMim {
+    display: flex;
+    gap: 20em;
+    padding: 8em 13em;
+    background-color: var(--cor-primaria);
+    font-family: "Inter", sans-serif;
+  }
 }

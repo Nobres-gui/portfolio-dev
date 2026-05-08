@@ -1,11 +1,11 @@
 export function Banner() {
   return (
-    <section className="banner">
+    <section className="banner" id="home">
       <div className="banner__container">
         <span className="banner__pre-title">Olá, meu nome é</span>
-        <div className="banner__title">
+        <div className="banner__title ">
           <span>Guilherme Nobres.</span>
-          <span className="banner__title-destaque">
+          <span className="banner__title-destaque typing-animation">
             Desenvolvedor Back-End.
           </span>
         </div>

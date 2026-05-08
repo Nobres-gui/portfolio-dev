@@ -3,7 +3,7 @@ export function NavBar() {
     <nav className="navbar">
       <div className="navbar__name">
         <span className="navbar__name-destaque">&lt;</span>
-        <div className="navbar-logo"> My Portfolio </div>
+        <div className="navbar-logo"> Guilherme </div>
         <span className="navbar__name-destaque">/&gt;</span>
       </div>
       <ul className="navbar__links">
