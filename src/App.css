@@ -8,7 +8,8 @@
 @import "./components/Footer/footer.css";
 
 /* Tema Dark (Seu padrão original) */
-:root, [data-theme='dark'] {
+:root,
+[data-theme="dark"] {
   --cor-primaria: #080c16;
   --cor-secundaria: #00e6e6;
   --cor-branca: #ffffff;
@@ -19,19 +20,26 @@
 }
 
 /* Tema Light (Inversão de tons) */
-[data-theme='light'] {
-  --cor-primaria: #f0f4f8;   /* Fundo claro */
+[data-theme="light"] {
+  --cor-primaria: #f0f4f8; /* Fundo claro */
   --cor-secundaria: #008b8b; /* Azul um pouco mais escuro para leitura */
-  --cor-branca: #080c16;     /* O que era branco vira a cor do seu fundo dark */
-  --cor-cinza: #475569;      /* Cinza mais escuro para contraste */
-  --cor-preta: #ffffff;      /* Inverte o preto */
-  --cor-card: #ffffff;       /* Cards brancos ou levemente cinzas */
+  --cor-branca: #080c16; /* O que era branco vira a cor do seu fundo dark */
+  --cor-cinza: #475569; /* Cinza mais escuro para contraste */
+  --cor-preta: #ffffff; /* Inverte o preto */
+  --cor-card: #ffffff; /* Cards brancos ou levemente cinzas */
   --border-opacity: 0.2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Isso garante que o padding não aumente o tamanho da caixa */
 }
 
 /* Transição suave para todo o site ao trocar de tema */
 body {
   background-color: var(--cor-primaria);
   color: var(--cor-branca);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }

@@ -1,7 +1,7 @@
 .sobreMim {
     display: flex;
     gap: 20em;
-    padding: 14em 13em 8em 13em;
+    padding: 5em 5em 8em 5em;
     background-color: var(--cor-primaria);
     font-family: "Inter", sans-serif;
 }

@@ -1,8 +1,8 @@
 .banner{
-    height: 100vh;;
+    height: 100vh;
     color: var(--cor-branca);
     background-color: var(--cor-primaria);
-    padding: 9em 11em;
+    padding: 2em 0em 2em 0em;
     font-family: 'Inter', sans-serif;
 }
 
