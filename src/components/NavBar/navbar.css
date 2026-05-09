@@ -1,17 +1,17 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: var(--cor-primaria);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 54em;
-    padding: 2em;
-    font-family: "JetBrains Mono", monospace;
-    margin-left: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--cor-primaria);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 54em;
+  padding: 2em;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 1em;
 }
 
 .navbar__name {
@@ -80,7 +80,7 @@
 
 @media (max-width: 768px) {
   .navbar {
-    gap: 0; 
+    gap: 0;
     padding: 1.2em 2.5em;
     justify-content: space-between; /* Alinha logo e hamburguer nas pontas */
     margin-left: 0;
@@ -88,6 +88,7 @@
 
   .navbar__hamburger {
     display: flex; /* Aparece no tablet e celular */
+    margin-right: 1em;
   }
 
   /* Animação do X quando o menu está aberto */

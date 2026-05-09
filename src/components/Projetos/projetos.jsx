@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export function Projetos() {
   const sectionRef = useRef(null);
@@ -12,7 +12,7 @@ export function Projetos() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -22,29 +22,38 @@ export function Projetos() {
   return (
     <section className="projetos" id="projects" ref={sectionRef}>
       {/* Título com animação simples */}
-      <h2 className={`projetos__container-title reveal-projetos ${visible ? 'active' : ''}`}>
+      <h2
+        className={`projetos__container-title reveal-projetos ${visible ? "active" : ""}`}
+      >
         <span className="container__title-destaque">.02</span> Projetos
       </h2>
 
       <div className="projetos__cards">
         {/* Coluna 1 - Surge Primeiro */}
-        <div className={`projetos__card-column reveal-projetos ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.2s' }}>
+        <div
+          className={`projetos__card-column reveal-projetos ${visible ? "active" : ""}`}
+          style={{ transitionDelay: "0.2s" }}
+        >
           <div className="projetos__card">
             <div className="projetos__card-icons">
               <i className="fa-solid fa-code-branch"></i>
               <ul className="card__icons-lista">
-                <li><i className="fa-brands fa-github"></i></li>
-                <li><i className="fa-solid fa-arrow-up-right-from-square"></i></li>
+                <li>
+                  <i className="fa-brands fa-github"></i>
+                </li>
+                <li>
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </li>
               </ul>
             </div>
             <div className="projetos__card-content">
-              <h2> PaymentHub API </h2>
+              <h2> EM BREVE </h2>
               <span>
-                Microsserviço de pagamentos robusto integrado com Stripe.
-                Utiliza filas para processamento assíncrono e garante
-                atomicidade nas transações financeiras.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Quibusdam aspernatur autem rerum deleniti beatae maiores
+                distinctio reprehenderit necessitatibus commodi excepturi minus
               </span>
-              <span>Python FastAPI Redis PostgreSQL</span>
+              <span>LINGUAGENS E FRAMEWORKS</span>
             </div>
           </div>
 
@@ -52,40 +61,51 @@ export function Projetos() {
             <div className="projetos__card-icons">
               <i className="fa-solid fa-code-branch"></i>
               <ul className="card__icons-lista">
-                <li><i className="fa-brands fa-github"></i></li>
-                <li><i className="fa-solid fa-arrow-up-right-from-square"></i></li>
+                <li>
+                  <i className="fa-brands fa-github"></i>
+                </li>
+                <li>
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </li>
               </ul>
             </div>
             <div className="projetos__card-content">
-              <h2> PaymentHub API </h2>
+              <h2> EM BREVE </h2>
               <span>
-                Microsserviço de pagamentos robusto integrado com Stripe.
-                Utiliza filas para processamento assíncrono e garante
-                atomicidade nas transações financeiras.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptate eos velit repudiandae optio quidem veniam repellendus!
+                Corporis velit pariatur laborum vel, repudiandae deleniti
               </span>
-              <span>Python FastAPI Redis PostgreSQL</span>
+              <span>LINGUAGENS E FRAMEWORKS</span>
             </div>
           </div>
         </div>
 
         {/* Coluna 2 - Surge com um atraso maior (0.4s) */}
-        <div className={`projetos__card-column reveal-projetos ${visible ? 'active' : ''}`} style={{ transitionDelay: '0.4s' }}>
+        <div
+          className={`projetos__card-column reveal-projetos ${visible ? "active" : ""}`}
+          style={{ transitionDelay: "0.4s" }}
+        >
           <div className="projetos__card">
             <div className="projetos__card-icons">
               <i className="fa-solid fa-code-branch"></i>
               <ul className="card__icons-lista">
-                <li><i className="fa-brands fa-github"></i></li>
-                <li><i className="fa-solid fa-arrow-up-right-from-square"></i></li>
+                <li>
+                  <i className="fa-brands fa-github"></i>
+                </li>
+                <li>
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </li>
               </ul>
             </div>
             <div className="projetos__card-content">
-              <h2> PaymentHub API </h2>
+              <h2> EM BREVE </h2>
               <span>
-                Microsserviço de pagamentos robusto integrado com Stripe.
-                Utiliza filas para processamento assíncrono e garante
-                atomicidade nas transações financeiras.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptate eos velit repudiandae optio quidem veniam repellendus!
+                Corporis velit pariatur laborum vel, repudiandae deleniti
               </span>
-              <span>Python FastAPI Redis PostgreSQL</span>
+              <span>LINGUAGENS E FRAMEWORKS</span>
             </div>
           </div>
 
@@ -93,18 +113,22 @@ export function Projetos() {
             <div className="projetos__card-icons">
               <i className="fa-solid fa-code-branch"></i>
               <ul className="card__icons-lista">
-                <li><i className="fa-brands fa-github"></i></li>
-                <li><i className="fa-solid fa-arrow-up-right-from-square"></i></li>
+                <li>
+                  <i className="fa-brands fa-github"></i>
+                </li>
+                <li>
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </li>
               </ul>
             </div>
             <div className="projetos__card-content">
-              <h2> PaymentHub API </h2>
+              <h2> EM BREVE </h2>
               <span>
-                Microsserviço de pagamentos robusto integrado com Stripe.
-                Utiliza filas para processamento assíncrono e garante
-                atomicidade nas transações financeiras.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptate eos velit repudiandae optio quidem veniam repellendus!
+                Corporis velit pariatur laborum vel, repudiandae deleniti
               </span>
-              <span>Python FastAPI Redis PostgreSQL</span>
+              <span>LINGUAGENS E FRAMEWORKS</span>
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@
 }
 
 .typing-animation {
-  width: 11.5em;
+  width: 12em;
   animation: typing 1s steps(22), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
@@ -47,7 +47,7 @@
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 11.5em }
+  to { width: 12em }
 }
 
 @keyframes blink {   
@@ -131,7 +131,7 @@
 
 @media (max-width: 768px) {
   .banner {
-    padding: 4em 2.5em;
+    padding: 4em 2.5em 0em 2.5em;
   }
 
   .banner__container {
