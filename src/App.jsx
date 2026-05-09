@@ -12,8 +12,9 @@ import emailjs from "@emailjs/browser";
 
 function App() {
   useEffect(() => {
-    if (window.location.hostname !== "localhost") {
-      // Criamos um objeto simples com os dados, sem depender de formulário
+    // Evita rodar em ambiente de desenvolvimento
+    if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+      
       const templateParams = {
         to_name: "Guilherme",
         message: "Alguém acabou de acessar seu portfólio na Vercel!",
@@ -21,26 +22,25 @@ function App() {
         user_agent: navigator.userAgent,
       };
 
-      // Usamos .send() em vez de .sendForm()
       emailjs
         .send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          templateParams, // Passamos o objeto aqui
+          templateParams,
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
         .then(() => {
           console.log("Notificação de acesso enviada.");
         })
         .catch((err) => {
-          console.error("Falha ao enviar notificação:", err);
+          console.error("Erro na notificação de acesso:", err);
         });
     }
   }, []);
 
   return (
     <div className="body_page">
-      <NavBar className="body__page-navBar" />
+      <NavBar />
       <Banner />
       <SobreMim />
       <Projetos />
